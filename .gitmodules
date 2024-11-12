@@ -1,3 +1,6 @@
 [submodule "modules/cwr-workflow-ro-crate"]
 	path = modules/cwr-workflow-ro-crate
 	url = git@github.com:dnlbauer/cwr-workflow-ro-crate.git
+[submodule "modules/FAIR-workflow-platform-argo-connector"]
+	path = modules/FAIR-workflow-platform-argo-connector
+	url = git@github.com:dnlbauer/FAIR-workflow-platform-argo-connector
