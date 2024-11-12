@@ -1,0 +1,3 @@
+[submodule "modules/cwr-workflow-ro-crate"]
+	path = modules/cwr-workflow-ro-crate
+	url = git@github.com:dnlbauer/cwr-workflow-ro-crate.git
