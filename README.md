@@ -9,6 +9,7 @@ and advertised via [FAIR Signposting](https://signposting.org/FAIR/).
 
 ## Features
 
+- **Login via ORCID**
 - **Workflow Execution** Integrates with [Argo Workflows](https://argoproj.github.io/workflows/) for workflow execution.
 - **RO-Crate compatibility**: End-To-End integration of RO-Crates
 - **Digital Object Management**: Workflows and datasets are stored as Digital Objects using [Cordra](https://www.cordra.org/)
@@ -22,7 +23,7 @@ The workflow platform follows a microservice architecture allowing components to
 
 ### Submodules
 
-- **Frontend**: An interface for accessing data and executing workflows.
+- [**Frontend**](https://github.com/dnlbauer/FAIR-workflow-platform-frontend): An interface for accessing data and executing workflows.
 - [**Cordra schema**](https://github.com/dnlbauer/FAIR-workflow-platform-cordra-schema): Provides schema and metadata models for the digital object store.
 - [**Argo Workflow Connector**](https://github.com/dnlbauer/FAIR-workflow-platform-argo-connector): An implementation of the `Submission service` that handles orchestration of Argo workflows for workflow execution.
 - [**Crop wild relatives Workflow RO-Crate**](https://github.com/dnlbauer/cwr-workflow-ro-crate): A sample RO-Crate workflow that runs the [Crop Wild Relatives prototype Digital Twin](https://github.com/BioDT/uc-CWR). See [here](https://doi.org/10.3897/rio.10.e125192) for details. 

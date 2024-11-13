@@ -7,3 +7,6 @@
 [submodule "modules/FAIR-workflow-platform-cordra-schema"]
 	path = modules/FAIR-workflow-platform-cordra-schema
 	url = git@github.com:dnlbauer/FAIR-workflow-platform-cordra-schema
+[submodule "modules/FAIR-workflow-platform-frontend"]
+	path = modules/FAIR-workflow-platform-frontend
+	url = git@github.com:dnlbauer/FAIR-workflow-platform-frontend.git
