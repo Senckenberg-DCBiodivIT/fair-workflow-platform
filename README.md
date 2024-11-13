@@ -7,6 +7,9 @@ It allows to execute and reuse machine-actionable workflows and resulting data,
 encapsulated in [Research Object Crates (RO-Crates)](https://www.researchobject.org/ro-crate/)
 and advertised via [FAIR Signposting](https://signposting.org/FAIR/).
 
+More infos on the use case: [https://doi.org/10.3897/biss.8.134479](https://doi.org/10.3897/biss.8.134479)
+
+
 ## Features
 
 - **Login via ORCID**
