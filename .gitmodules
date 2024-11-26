@@ -2,11 +2,11 @@
 	path = modules/cwr-workflow-ro-crate
 	url = git@github.com:dnlbauer/cwr-workflow-ro-crate.git
 [submodule "modules/FAIR-workflow-platform-argo-connector"]
-	path = modules/FAIR-workflow-platform-argo-connector
+	path = modules/argo-connector
 	url = git@github.com:dnlbauer/FAIR-workflow-platform-argo-connector
 [submodule "modules/FAIR-workflow-platform-cordra-schema"]
-	path = modules/FAIR-workflow-platform-cordra-schema
+	path = modules/cordra-schema
 	url = git@github.com:dnlbauer/FAIR-workflow-platform-cordra-schema
 [submodule "modules/FAIR-workflow-platform-frontend"]
-	path = modules/FAIR-workflow-platform-frontend
+	path = modules/frontend
 	url = git@github.com:dnlbauer/FAIR-workflow-platform-frontend.git
