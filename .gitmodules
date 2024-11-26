@@ -10,3 +10,9 @@
 [submodule "modules/FAIR-workflow-platform-frontend"]
 	path = modules/frontend
 	url = git@github.com:dnlbauer/FAIR-workflow-platform-frontend.git
+[submodule "modules/argo-connector"]
+	path = modules/argo-connector
+	url = git@github.com:dnlbauer/FAIR-workflow-platform-argo-connector.git
+[submodule "modules/cordra-schema"]
+	path = modules/cordra-schema
+	url = git@github.com:dnlbauer/FAIR-workflow-platform-cordra-schema.git
