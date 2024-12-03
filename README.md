@@ -18,18 +18,26 @@ More infos on the use case: [https://doi.org/10.3897/biss.8.134479](https://doi.
 - **Digital Object Management**: Workflows and datasets are stored as Digital Objects using [Cordra](https://www.cordra.org/)
 - **FAIR Signposting** on the frontend allows for integration of results into the semantic web.
 
-## Architecture
+## Architecture Overview
+
+
+The workflow platform employs a microservice architecture allowing components to be extended or replaced for flexibility.
+
+- **Frontend**: User-facing interface for submitting workflows and viewing datasets.
+- **Digital Object Repository**: [Cordra](https://www.cordra.org/)-based system for storing and managing datasets as FAIR Digital Objects
+- **Submission Service**: Handles orchestration between frontend, digital object repository and the workflow service.
+- **Workflow Service**: A workflow execution engine for executing workflows.
 
 ![Components Diagram](assets/components.png)
 
-The workflow platform follows a microservice architecture allowing components to be extended or replaced for flexibility. This repository incorporates each of these components as submodules. 
+Detailed architecture information including data flows and interaction diagrams is available in the [Architecture Documentation](./architecture.md)
 
-### Submodules
+## Modules
 
-- [**Frontend**](https://github.com/dnlbauer/FAIR-workflow-platform-frontend): An interface for accessing data and executing workflows.
-- [**Cordra schema**](https://github.com/dnlbauer/FAIR-workflow-platform-cordra-schema): Provides schema and metadata models for the digital object store.
-- [**Argo Workflow Connector**](https://github.com/dnlbauer/FAIR-workflow-platform-argo-connector): An implementation of the `Submission service` that handles orchestration of Argo workflows for workflow execution.
-- [**Crop wild relatives Workflow RO-Crate**](https://github.com/dnlbauer/cwr-workflow-ro-crate): A sample RO-Crate workflow that runs the [Crop Wild Relatives prototype Digital Twin](https://github.com/BioDT/uc-CWR). See [here](https://doi.org/10.3897/rio.10.e125192) for details. 
+- [**Frontend**](https://github.com/dnlbauer/FAIR-workflow-platform-frontend): Django-based frontend
+- [**Cordra schema**](https://github.com/dnlbauer/FAIR-workflow-platform-cordra-schema): Schemas and metadata models for the digital object Repository
+- [**Argo Workflow Connector**](https://github.com/dnlbauer/FAIR-workflow-platform-argo-connector): An implementation of the `Submission service` that orchestrates workflows in Argo
+- [**Crop wild relatives Workflow RO-Crate**](https://github.com/dnlbauer/cwr-workflow-ro-crate): Sapmle RO-Crate with a workflow that runs the [Crop Wild Relatives prototype Digital Twin](https://github.com/BioDT/uc-CWR). See [here](https://doi.org/10.3897/rio.10.e125192) for details. 
 
 ## Deployment at DestinE
 
