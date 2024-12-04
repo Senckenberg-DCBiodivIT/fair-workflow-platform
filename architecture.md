@@ -129,11 +129,15 @@ This should ensure extensibility and allow for individual building blocks being 
 
 ## 6. Runtime View
 
-### 6.1 Workflow Submission
+### 6.1 Workflow Run
 
-### 6.2 Data Ingestion
+![Workflow Submission Flow Chart](./assets/exec_flow_wfl_submission.png)
 
 ### 6.3 Data Retrieval
+
+![Data Retrieval: detached RO-Crate](./assets/exec_flow_detached_retrieval.png)
+
+![Data Retrieval: zipped RO-Crate](./assets/exec_flow_zip_retrieval.png)
 
 ## 7. Deployment View
 
