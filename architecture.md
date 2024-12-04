@@ -129,15 +129,65 @@ This should ensure extensibility and allow for individual building blocks being 
 
 ## 6. Runtime View
 
-### 6.1 Workflow Run
+### 6.1 Workflow Submission
 
 ![Workflow Submission Flow Chart](./assets/exec_flow_wfl_submission.png)
 
-### 6.3 Data Retrieval
+Workflow submission consists of multiple phases:
+1. User authentication: This is a typical [SAML](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language) authentication flow with [orcid](https://orcid.org) as identity provider.
+2. Workflow upload and validation:
+The user uploads a Workflow RO-Crate to the frontend. The frontend extracts the workflow file and checks its validity against the Workflow Submission Service.
+The result is reported back to the user.
+3. Workflow submission and execution:
+When the user submits the validated workflow, it is send to the Workflow Submission Service with additional provenance data
+(i.e. user name).
+The workflow submission service adds the provenance data as annotations to the workflow and queues the updated workflow to the Workflow Service.
+The workflow steps get executed according to the workflow definition.
+Finally, on successful completion, an exit handler is run that notifies the Workflow submission service about completion.
+4. Ingestion of workflow results:
+Upon retrieval of the notificaton from the exit handler,
+the Workflow submission service is responsible for creating a dataset representing this run in the Digital Object Repository.
+It first retrieves the workflow information which includes
+a description of the workflow and the provenance data as annotations.
+The Submission service subsequently builds Digital Objects for this data and adds them to the Digital Object Repository.
+For all artifacts of the workflow, a Digital Object representing this artifact is created.
+Finally, a Digital Object for the whole dataset is written, which makes the dataset available for [retrieval](#62-data-retrieval)
+
+### 6.2 Data Retrieval
+
+Data retrieval involves two primary modes:
+retrieval of a detached RO-Crate and a zipped RO-Crate containing
+all data. Both Crates are valid [Workflow Run RO-Crates](https://www.researchobject.org/workflow-run-crate/)
+
+#### 6.2.1 Retrieval of Detached RO-Crate
 
 ![Data Retrieval: detached RO-Crate](./assets/exec_flow_detached_retrieval.png)
 
+The user requests an RO-Crate in a detached format.
+A detached RO-Crate lives on the internet and links to the
+contenet files of the RO-Crate.
+
+The process involves the following steps:
+1. The user sends a request to the frontend for a detached RO-Crate.
+2. The frontend queries the Digital Object Repository (Cordra) for the relevant Digital Objects. 
+3. Cordra constructs the object graph from the stored digital objects and returns it to the frontend.
+4. The frontend converts the object graph into a detached RO-Crate and delivers it to the user as json.
+
+#### 6.2.2 Zipped RO-Crate
+
 ![Data Retrieval: zipped RO-Crate](./assets/exec_flow_zip_retrieval.png)
+
+The user requests an RO-Crate as a zipped package containing both metadata and associated files.
+The process follows similar steps to [6.2.1](#621-retrieval-of-detached-ro-crate) to retrieve the object graph but also streams the files of the RO-Crate into a zip stream respones.
+
+1. The user sends a request to the frontend for a zipped RO-Crate.
+2. The frontend queries the Digital Object Repository (Cordra) for the relevant Digital Objects. 
+3. Cordra constructs the object graph from the stored digital objects and returns it to the frontend.
+4. The frontend converts the object graph into the RO-Crate format.
+5. The frontend starts streaming a zip file as HTTP response to the user. The stream includes the RO-Crate metadata as file according to the RO-Crate specification.
+6. For each digital object in the graph that represents a file, the frontend retrieves the file from Cordra and adds it to the zip archive.
+The files are added "on-the-fly", meaning they are streamed directly from Cordra, into the zip stream.
+Therefore files don't need to fit into memory or onto disk for the frontend.
 
 ## 7. Deployment View
 
