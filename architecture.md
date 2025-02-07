@@ -134,7 +134,7 @@ This should ensure extensibility and allow for individual building blocks being 
 ![Workflow Submission Flow Chart](./assets/exec_flow_wfl_submission.png)
 
 Workflow submission consists of multiple phases:
-1. User authentication: This is a typical [SAML](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language) authentication flow with [orcid](https://orcid.org) as identity provider.
+1. User authentication: This is a typical OAuth authentication flow with [orcid](https://orcid.org) as identity provider.
 2. Workflow upload and validation:
 The user uploads a Workflow RO-Crate to the frontend. The frontend extracts the workflow file and checks its validity against the Workflow Submission Service.
 The result is reported back to the user.
