@@ -41,7 +41,7 @@ Detailed architecture information including data flows and interaction diagrams 
 
 ## Deployment at DestinE
 
-A version of the platform is currently deployed to the [Destination Earth Platform](https://destination-earth.eu/) and can be accessed here: [Crop Wild Relatives](http://217.71.193.143/). 
+A version of the platform is currently deployed to the [Destination Earth Platform](https://destination-earth.eu/) and can be accessed here: [Crop Wild Relatives](http://workflow.earth/). 
 
 ### Deployment diagram
 
