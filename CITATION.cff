@@ -13,6 +13,10 @@ authors:
     email: daniel.bauer@senckenberg.de
     affiliation: Senckenberg Society for Nature Research
     orcid: 'https://orcid.org/0000-0001-9447-460X'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.17242629
+    description: Archived versions of this software at Zenodo
 repository-code: >-
   https://github.com/Senckenberg-DCBiodivIT/fair-workflow-platform
 abstract: >-

@@ -1,5 +1,8 @@
 # A FAIR workflow platform for biodiversity digital twins
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17242629.svg)](https://doi.org/10.5281/zenodo.17242629)
+
+
 This FAIR workflow platform is developed as a solution
 for executing and sharing [FAIR](https://www.go-fair.org/fair-principles/) (Findable, Accessible, Interoperable, Reuseable)
 workflows across research domains.
